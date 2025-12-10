@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  # 1. Base de Datos (SQL Server)
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: hr_sql_server
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=TuPasswordFuerte123! # ¡Cambia esto si quieres!
+    ports:
+      - "1433:1433"
+    networks:
+      - hr_network
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  # 2. Tu API .NET (HRManagement)
+  api:
+    image: hrmanagement-api
+    container_name: hr_api
+    build:
+      context: .
+      dockerfile: HRManagement.WebApi/Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      # IMPORTANTE: Conexión apuntando al servicio 'db'
+      - ConnectionStrings__DefaultConnection=Server=db;Database=HRManagementDb;User Id=sa;Password=TuPasswordFuerte123!;TrustServerCertificate=True;
+    depends_on:
+      - db
+    networks:
+      - hr_network
+
+  # 3. n8n (Automatización)
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n_app
+    ports:
+      - "5678:5678"
+    environment:
+      - N8N_SECURE_COOKIE=false
+      # Esta URL la actualizaremos cuando tengamos el Tunel
+      - WEBHOOK_URL=http://localhost:5678/
+    volumes:
+      - n8n_data:/home/node/.n8n
+    networks:
+      - hr_network
+
+  # 4. Túnel (Opcional por ahora, para salida a internet rápida)
+  # Si aún no tienes token de Cloudflare, puedes comentar estas líneas poniendo un # al inicio
+  tunnel:
+    image: cloudflare/cloudflared:latest
+    container_name: cloudflare_tunnel
+    command: tunnel --no-autoupdate run --token TU_TOKEN_AQUI
+    networks:
+      - hr_network
+    restart: unless-stopped
+
+networks:
+  hr_network:
+    driver: bridge
+
+volumes:
+  n8n_data:
+  sql_data:

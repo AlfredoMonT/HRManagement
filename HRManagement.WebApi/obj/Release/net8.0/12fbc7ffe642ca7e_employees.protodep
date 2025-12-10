@@ -1,0 +1,2 @@
+obj\Release\net8.0\Protos/Employees.cs \
+obj\Release\net8.0\Protos/EmployeesGrpc.cs: Protos/employees.proto

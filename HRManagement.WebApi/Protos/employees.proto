@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace = "HRManagement.WebApi.Protos";
+
+package hr;
+
+// Definición del servicio
+service EmployeeGrpc {
+  // Función para obtener info de un empleado
+  rpc GetEmployeeInfo (EmployeeRequest) returns (EmployeeReply);
+}
+
+// Mensaje de lo que pides (Input)
+message EmployeeRequest {
+  int32 id = 1;
+}
+
+// Mensaje de lo que recibes (Output)
+message EmployeeReply {
+  int32 id = 1;
+  string firstName = 2;
+  string lastName = 3;
+  string email = 4;
+}

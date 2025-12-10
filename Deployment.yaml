@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hrmanagement-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hrmanagement-api
+  template:
+    metadata:
+      labels:
+        app: hrmanagement-api
+    spec:
+      containers:
+      - name: hrmanagement-api-container
+        image: hrmanagement-app:1.0
+        imagePullPolicy: Never # ¡Importante! Usa la imagen local
+        ports:
+        - containerPort: 8080 # El puerto interno de la API
+
+        # Aquí definimos las variables de entorno
+        env:
+        - name: ASPNETCORE_ENVIRONMENT
+          value: "Development"
+        - name: ASPNETCORE_HTTP_PORTS # Coincide con el Dockerfile
+          value: "8080"
+        # Esta es la variable de Program.cs
+        - name: ConnectionStrings__DefaultConnection
+          # Esta es la IP "mágica" para que el Pod de Minikube
+          # vea tu PC (donde corre el Docker de la BD)
+          # y el puerto 1433 que abriste en tu PC.
+          value: "Server=host.minikube.internal,1433;Database=HrDatabase;User Id=SA;Password=SqlServer123!;TrustServerCertificate=True;Encrypt=False"
