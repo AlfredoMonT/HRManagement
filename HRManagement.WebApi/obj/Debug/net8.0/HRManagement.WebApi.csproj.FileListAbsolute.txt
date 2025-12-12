@@ -170,6 +170,7 @@ C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManag
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\HRManagement.WebApi.csproj.CoreCompileInputs.cache
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\HRManagement.WebApi.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\HRManagement.WebApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\HRManagement.WebApi.sourcelink.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
@@ -178,6 +179,7 @@ C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManag
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\HRManage.794E0398.Up2Date
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\HRManagement.WebApi.dll
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.WebApi\obj\Debug\net8.0\refint\HRManagement.WebApi.dll

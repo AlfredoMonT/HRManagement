@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MediatR;
+using HRManagement.Application.Features.Auth.Queries.Login;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -10,52 +12,51 @@ namespace HRManagement.WebApi.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
+        // 👇 ESTAS DOS LÍNEAS TE FALTABAN, POR ESO EL ERROR
+        private readonly IMediator _mediator;
         private readonly IConfiguration _configuration;
 
-        public AuthController(IConfiguration configuration)
+        // 👇 ESTE CONSTRUCTOR TAMBIÉN ES OBLIGATORIO
+        public AuthController(IMediator mediator, IConfiguration configuration)
         {
+            _mediator = mediator;
             _configuration = configuration;
         }
 
         [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginRequest request)
+        public async Task<ActionResult> Login([FromBody] LoginQuery request)
         {
-            // Simulación: Aceptamos admin/admin
-            if (request.Username == "admin" && request.Password == "admin")
+            // Ahora _mediator ya existe
+            var user = await _mediator.Send(request);
+
+            if (user == null)
             {
-                var token = GenerateJwtToken(request.Username);
-                return Ok(new { token });
+                return Unauthorized("Usuario o contraseña incorrectos.");
             }
-            return Unauthorized();
-        }
 
-        private string GenerateJwtToken(string username)
-        {
-            var jwtSettings = _configuration.GetSection("Jwt");
-            var key = Encoding.ASCII.GetBytes(jwtSettings["Key"]!);
+            // Generación del Token
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]!));
+            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
-            var tokenDescriptor = new SecurityTokenDescriptor
+            var claims = new[]
             {
-                Subject = new ClaimsIdentity(new[]
-                {
-                    new Claim(ClaimTypes.Name, username),
-                    new Claim(ClaimTypes.Role, "Admin") // Rol simulado
-                }),
-                Expires = DateTime.UtcNow.AddHours(1),
-                Issuer = jwtSettings["Issuer"],
-                Audience = jwtSettings["Audience"],
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                new Claim(ClaimTypes.Name, user.Username),
+                new Claim(ClaimTypes.Role, user.Role)
             };
 
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return tokenHandler.WriteToken(token);
-        }
-    }
+            var token = new JwtSecurityToken(
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
+                claims: claims,
+                expires: DateTime.Now.AddHours(1),
+                signingCredentials: creds
+            );
 
-    public class LoginRequest
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
+            return Ok(new
+            {
+                token = new JwtSecurityTokenHandler().WriteToken(token),
+                expiration = token.ValidTo
+            });
+        }
     }
 }

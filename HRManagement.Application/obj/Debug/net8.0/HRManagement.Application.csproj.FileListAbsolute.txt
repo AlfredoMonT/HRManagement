@@ -8,6 +8,7 @@ C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManag
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\HRManagement.Application.AssemblyInfoInputs.cache
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\HRManagement.Application.AssemblyInfo.cs
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\HRManagement.Application.csproj.CoreCompileInputs.cache
+C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\HRManagement.Application.sourcelink.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\HRManage.380E2EFB.Up2Date
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\HRManagement.Application.dll
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Application\obj\Debug\net8.0\refint\HRManagement.Application.dll

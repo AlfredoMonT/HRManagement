@@ -1,16 +1,16 @@
-using HRManagement.Infrastructure.Persistence; // Tu DbContext
+using HRManagement.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
-using HRManagement.Application.Features.Employees.Commands.CreateEmployee; // Para que encuentre los comandos CQRS
-using HRManagement.WebApi.Services; // Para tu servicio gRPC
-using Microsoft.AspNetCore.Authentication.JwtBearer; // NUEVO: Para la seguridad
-using Microsoft.IdentityModel.Tokens; // NUEVO: Para crear las llaves
-using System.Text; // NUEVO: Para leer texto
+using HRManagement.Application.Features.Employees.Commands.CreateEmployee;
+using HRManagement.WebApi.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using HRManagement.Application.Interfaces;
+using Microsoft.OpenApi.Models; 
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ==========================================
-// 1. CONFIGURACIÓN DE SERVICIOS (CONTENEDOR)
-// ==========================================
+// 1. CONFIGURACIÓN DE SERVICIOS
 
 // Base de Datos (SQL Server)
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
@@ -19,24 +19,61 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<HrManagementDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// MediatR (Patrón CQRS - Requisito 6.4)
+// Conectar la Interfaz con la Base de Datos Real
+builder.Services.AddScoped<IHrManagementDbContext>(provider => provider.GetRequiredService<HrManagementDbContext>());
+
+// MediatR (Patrón CQRS)
 builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssembly(typeof(CreateEmployeeCommand).Assembly);
 });
 
-// gRPC (Requisito 6.3)
+// gRPC 
 builder.Services.AddGrpc();
 
-// Controladores y Swagger (Requisito 6.2)
+// Controladores
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-// --- SEGURIDAD JWT (Requisito 6.6) ---
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "HRManagement API", Version = "v1" });
+
+    // Definimos el esquema de seguridad (Bearer)
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Description = @"JWT Authorization header using the Bearer scheme. 
+                      Enter 'Bearer' [space] and then your token in the text input below.
+                      Example: 'Bearer 12345abcdef'",
+        Name = "Authorization",
+        In = ParameterLocation.Header,
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                Scheme = "oauth2",
+                Name = "Bearer",
+                In = ParameterLocation.Header,
+            },
+            new List<string>()
+        }
+    });
+});
+// -----------------------------------------------------
+
+// --- SEGURIDAD JWT ---
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var secretKey = jwtSettings["Key"];
 
-// Validación de seguridad por si olvidaste poner la clave en appsettings
 if (string.IsNullOrEmpty(secretKey))
 {
     throw new Exception("¡ERROR! La clave 'Jwt:Key' no está configurada en appsettings.json");
@@ -68,25 +105,18 @@ builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
-// ==========================================
 // 2. CONFIGURACIÓN DEL PIPELINE HTTP
-// ==========================================
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
-// ¡IMPORTANTE! El orden aquí es crítico:
-app.UseAuthentication(); // 1. Identificar al usuario (¿Quién eres?)
-app.UseAuthorization();  // 2. Verificar permisos (¿Puedes pasar?)
+app.UseAuthentication(); // 1. Identificar al usuario
+app.UseAuthorization();  // 2. Verificar permisos
 
 app.MapControllers();
-
-// Endpoint de gRPC
 app.MapGrpcService<EmployeeGrpcService>();
 
 app.Run();

@@ -171,6 +171,7 @@ C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManag
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\HRManagement.Tests.AssemblyInfoInputs.cache
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\HRManagement.Tests.AssemblyInfo.cs
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\HRManagement.Tests.csproj.CoreCompileInputs.cache
+C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\HRManagement.Tests.sourcelink.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\HRManage.F161310F.Up2Date
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\HRManagement.Tests.dll
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Tests\obj\Debug\net9.0\refint\HRManagement.Tests.dll

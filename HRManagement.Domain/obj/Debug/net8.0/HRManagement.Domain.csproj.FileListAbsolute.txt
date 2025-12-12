@@ -5,6 +5,7 @@ C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManag
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\HRManagement.Domain.AssemblyInfoInputs.cache
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\HRManagement.Domain.AssemblyInfo.cs
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\HRManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\HRManagement.Domain.sourcelink.json
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\HRManagement.Domain.dll
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\refint\HRManagement.Domain.dll
 C:\Users\djalf\OneDrive\Documentos\Visual Studio 2022\HRManagementSystem\HRManagement.Domain\obj\Debug\net8.0\HRManagement.Domain.pdb
