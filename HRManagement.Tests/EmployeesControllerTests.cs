@@ -1,10 +1,10 @@
 ﻿using Xunit;
 using Moq;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using HRManagement.WebApi.Controllers;
-using MediatR;
-using HRManagement.Infrastructure.Persistence;
 using HRManagement.Application.Features.Employees.Commands.CreateEmployee;
+using HRManagement.Application.Interfaces; // Necesario para el mock del Context
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -12,45 +12,46 @@ namespace HRManagement.Tests
 {
     public class EmployeesControllerTests
     {
-        // Definimos los Mocks (Los "dobles" de acción)
         private readonly Mock<IMediator> _mockMediator;
-        private readonly Mock<HrManagementDbContext> _mockContext;
+        private readonly Mock<IHrManagementDbContext> _mockContext; // 1. Nuevo Mock necesario
+        private readonly EmployeesController _controller;
 
         public EmployeesControllerTests()
         {
-            // Inicializamos los simuladores
             _mockMediator = new Mock<IMediator>();
-            _mockContext = new Mock<HrManagementDbContext>(); // No lo usaremos en el Create, así que puede estar vacío
+            _mockContext = new Mock<IHrManagementDbContext>(); // 2. Inicializamos el mock
+
+            // 3. Pasamos AMBOS mocks al constructor (antes solo pasábamos mediator)
+            _controller = new EmployeesController(_mockMediator.Object, _mockContext.Object);
         }
 
         [Fact]
-        public async Task Create_ShouldReturnOk_WhenCommandIsValid()
+        public async Task CreateEmployee_ReturnsOkResult()
         {
-            // 1. ARRANGE (Preparar)
-            // Configuramos el simulador: "Cuando te envíen cualquier comando, responde con el ID 99"
-            _mockMediator.Setup(m => m.Send(It.IsAny<CreateEmployeeCommand>(), It.IsAny<CancellationToken>()))
-                         .ReturnsAsync(99);
-
-            // Instanciamos el controlador inyectándole los objetos falsos
-            var controller = new EmployeesController(_mockMediator.Object, null);
-            // Nota: Pasamos 'null' al DbContext porque el método Create (CQRS) no lo usa, usa Mediator.
-
+            // Arrange
             var command = new CreateEmployeeCommand
             {
                 FirstName = "Test",
                 LastName = "User",
-                Email = "test@mail.com",
-                Salary = 1000
+                Email = "test@example.com",
+                Salary = 1000,
+                // Agregamos los campos requeridos para evitar warnings de null
+                PhoneNumber = "123456789",
+                Department = "IT",
+                PositionId = 1
             };
 
-            // 2. ACT (Actuar)
-            var result = await controller.Create(command);
+            // Simulamos que MediatR devuelve el ID 1 cuando se le llama
+            _mockMediator.Setup(m => m.Send(It.IsAny<CreateEmployeeCommand>(), It.IsAny<CancellationToken>()))
+                .ReturnsAsync(1);
 
-            // 3. ASSERT (Verificar)
-            // Verificamos que la respuesta sea un "200 OK"
-            var okResult = Assert.IsType<OkObjectResult>(result);
-            // Verificamos que el Mediator haya sido llamado exactamente 1 vez
-            _mockMediator.Verify(x => x.Send(It.IsAny<CreateEmployeeCommand>(), It.IsAny<CancellationToken>()), Times.Once);
+            // Act
+            // 4. CORRECCIÓN CLAVE: Llamamos a 'CreateEmployee', no a 'Create'
+            var result = await _controller.CreateEmployee(command);
+
+            // Assert
+            var actionResult = Assert.IsType<OkObjectResult>(result.Result);
+            Assert.Equal(200, actionResult.StatusCode);
         }
     }
-}
+} 

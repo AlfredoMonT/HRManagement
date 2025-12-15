@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hCVVTvEGbuw=",
+  "dgSpecHash": "VWvt8KaD08I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Infrastructure\\HRManagement.Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Infrastructure\\HRManagement.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\djalf\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\djalf\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

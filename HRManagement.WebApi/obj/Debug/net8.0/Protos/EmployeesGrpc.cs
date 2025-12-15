@@ -9,11 +9,11 @@ using grpc = global::Grpc.Core;
 
 namespace HRManagement.WebApi.Protos {
   /// <summary>
-  /// Definición del servicio
+  /// Definición del Servicio (Las funciones que expones)
   /// </summary>
   public static partial class EmployeeGrpc
   {
-    static readonly string __ServiceName = "hr.EmployeeGrpc";
+    static readonly string __ServiceName = "employees.EmployeeGrpc";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -49,17 +49,29 @@ namespace HRManagement.WebApi.Protos {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::HRManagement.WebApi.Protos.EmployeeRequest> __Marshaller_hr_EmployeeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HRManagement.WebApi.Protos.EmployeeRequest.Parser));
+    static readonly grpc::Marshaller<global::HRManagement.WebApi.Protos.GetEmployeeRequest> __Marshaller_employees_GetEmployeeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HRManagement.WebApi.Protos.GetEmployeeRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::HRManagement.WebApi.Protos.EmployeeReply> __Marshaller_hr_EmployeeReply = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HRManagement.WebApi.Protos.EmployeeReply.Parser));
+    static readonly grpc::Marshaller<global::HRManagement.WebApi.Protos.EmployeeModel> __Marshaller_employees_EmployeeModel = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HRManagement.WebApi.Protos.EmployeeModel.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::HRManagement.WebApi.Protos.CreateEmployeeRequest> __Marshaller_employees_CreateEmployeeRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HRManagement.WebApi.Protos.CreateEmployeeRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::HRManagement.WebApi.Protos.CreateEmployeeResponse> __Marshaller_employees_CreateEmployeeResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::HRManagement.WebApi.Protos.CreateEmployeeResponse.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::HRManagement.WebApi.Protos.EmployeeRequest, global::HRManagement.WebApi.Protos.EmployeeReply> __Method_GetEmployeeInfo = new grpc::Method<global::HRManagement.WebApi.Protos.EmployeeRequest, global::HRManagement.WebApi.Protos.EmployeeReply>(
+    static readonly grpc::Method<global::HRManagement.WebApi.Protos.GetEmployeeRequest, global::HRManagement.WebApi.Protos.EmployeeModel> __Method_GetEmployeeInfo = new grpc::Method<global::HRManagement.WebApi.Protos.GetEmployeeRequest, global::HRManagement.WebApi.Protos.EmployeeModel>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetEmployeeInfo",
-        __Marshaller_hr_EmployeeRequest,
-        __Marshaller_hr_EmployeeReply);
+        __Marshaller_employees_GetEmployeeRequest,
+        __Marshaller_employees_EmployeeModel);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::HRManagement.WebApi.Protos.CreateEmployeeRequest, global::HRManagement.WebApi.Protos.CreateEmployeeResponse> __Method_CreateEmployee = new grpc::Method<global::HRManagement.WebApi.Protos.CreateEmployeeRequest, global::HRManagement.WebApi.Protos.CreateEmployeeResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateEmployee",
+        __Marshaller_employees_CreateEmployeeRequest,
+        __Marshaller_employees_CreateEmployeeResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -72,13 +84,25 @@ namespace HRManagement.WebApi.Protos {
     public abstract partial class EmployeeGrpcBase
     {
       /// <summary>
-      /// Función para obtener info de un empleado
+      /// 1. Obtener un empleado por su ID
       /// </summary>
       /// <param name="request">The request received from the client.</param>
       /// <param name="context">The context of the server-side call handler being invoked.</param>
       /// <returns>The response to send back to the client (wrapped by a task).</returns>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::System.Threading.Tasks.Task<global::HRManagement.WebApi.Protos.EmployeeReply> GetEmployeeInfo(global::HRManagement.WebApi.Protos.EmployeeRequest request, grpc::ServerCallContext context)
+      public virtual global::System.Threading.Tasks.Task<global::HRManagement.WebApi.Protos.EmployeeModel> GetEmployeeInfo(global::HRManagement.WebApi.Protos.GetEmployeeRequest request, grpc::ServerCallContext context)
+      {
+        throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
+      }
+
+      /// <summary>
+      /// 2. Crear un empleado nuevo (Cumple con la rúbrica de enviar datos)
+      /// </summary>
+      /// <param name="request">The request received from the client.</param>
+      /// <param name="context">The context of the server-side call handler being invoked.</param>
+      /// <returns>The response to send back to the client (wrapped by a task).</returns>
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::System.Threading.Tasks.Task<global::HRManagement.WebApi.Protos.CreateEmployeeResponse> CreateEmployee(global::HRManagement.WebApi.Protos.CreateEmployeeRequest request, grpc::ServerCallContext context)
       {
         throw new grpc::RpcException(new grpc::Status(grpc::StatusCode.Unimplemented, ""));
       }
@@ -91,7 +115,8 @@ namespace HRManagement.WebApi.Protos {
     public static grpc::ServerServiceDefinition BindService(EmployeeGrpcBase serviceImpl)
     {
       return grpc::ServerServiceDefinition.CreateBuilder()
-          .AddMethod(__Method_GetEmployeeInfo, serviceImpl.GetEmployeeInfo).Build();
+          .AddMethod(__Method_GetEmployeeInfo, serviceImpl.GetEmployeeInfo)
+          .AddMethod(__Method_CreateEmployee, serviceImpl.CreateEmployee).Build();
     }
 
     /// <summary>Register service method with a service binder with or without implementation. Useful when customizing the service binding logic.
@@ -101,7 +126,8 @@ namespace HRManagement.WebApi.Protos {
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     public static void BindService(grpc::ServiceBinderBase serviceBinder, EmployeeGrpcBase serviceImpl)
     {
-      serviceBinder.AddMethod(__Method_GetEmployeeInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::HRManagement.WebApi.Protos.EmployeeRequest, global::HRManagement.WebApi.Protos.EmployeeReply>(serviceImpl.GetEmployeeInfo));
+      serviceBinder.AddMethod(__Method_GetEmployeeInfo, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::HRManagement.WebApi.Protos.GetEmployeeRequest, global::HRManagement.WebApi.Protos.EmployeeModel>(serviceImpl.GetEmployeeInfo));
+      serviceBinder.AddMethod(__Method_CreateEmployee, serviceImpl == null ? null : new grpc::UnaryServerMethod<global::HRManagement.WebApi.Protos.CreateEmployeeRequest, global::HRManagement.WebApi.Protos.CreateEmployeeResponse>(serviceImpl.CreateEmployee));
     }
 
   }

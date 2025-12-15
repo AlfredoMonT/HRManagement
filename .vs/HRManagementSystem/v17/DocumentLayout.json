@@ -1,37 +1,61 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\",
+  "WorkspaceRootPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E5210577-A4A2-4BD4-BCE6-208B927B7A7A}|HRManagement.Tests\\HRManagement.Tests.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.tests\\employeescontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5210577-A4A2-4BD4-BCE6-208B927B7A7A}|HRManagement.Tests\\HRManagement.Tests.csproj|solutionrelative:hrmanagement.tests\\employeescontrollertests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\controllers\\employeescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.application\\features\\auth\\queries\\login\\loginqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|solutionrelative:hrmanagement.application\\features\\auth\\queries\\login\\loginqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{77E671E0-D59F-41E2-8DD2-E11742AB34C0}|HRManagement.Domain\\HRManagement.Domain.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.domain\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{77E671E0-D59F-41E2-8DD2-E11742AB34C0}|HRManagement.Domain\\HRManagement.Domain.csproj|solutionrelative:hrmanagement.domain\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7A181F7D-5F6A-487B-BA92-84F7063D034F}|HRManagement.Infrastructure\\HRManagement.Infrastructure.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.infrastructure\\persistence\\hrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7A181F7D-5F6A-487B-BA92-84F7063D034F}|HRManagement.Infrastructure\\HRManagement.Infrastructure.csproj|solutionrelative:hrmanagement.infrastructure\\persistence\\hrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.application\\interfaces\\ihrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.application\\interfaces\\ihrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|solutionrelative:hrmanagement.application\\interfaces\\ihrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.application\\hrmanagement.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.application\\features\\employees\\commands\\createemployee\\createemployeecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|solutionrelative:hrmanagement.application\\features\\employees\\commands\\createemployee\\createemployeecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.webapi\\services\\employeegrpcservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\services\\employeegrpcservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.webapi\\protos\\employees.proto||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\protos\\employees.proto||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EA5B61A3-43E2-4693-859D-2F088D16180C}|HRManagement.WebApi\\HRManagement.WebApi.csproj|solutionrelative:hrmanagement.webapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.application\\features\\auth\\queries\\login\\loginqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|solutionrelative:hrmanagement.application\\features\\auth\\queries\\login\\loginqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7A181F7D-5F6A-487B-BA92-84F7063D034F}|HRManagement.Infrastructure\\HRManagement.Infrastructure.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.infrastructure\\persistence\\hrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7A181F7D-5F6A-487B-BA92-84F7063D034F}|HRManagement.Infrastructure\\HRManagement.Infrastructure.csproj|solutionrelative:hrmanagement.infrastructure\\persistence\\hrmanagementdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.application\\hrmanagement.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|solutionrelative:hrmanagement.application\\hrmanagement.application.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{77E671E0-D59F-41E2-8DD2-E11742AB34C0}|HRManagement.Domain\\HRManagement.Domain.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{77E671E0-D59F-41E2-8DD2-E11742AB34C0}|HRManagement.Domain\\HRManagement.Domain.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{77E671E0-D59F-41E2-8DD2-E11742AB34C0}|HRManagement.Domain\\HRManagement.Domain.csproj|solutionrelative:hrmanagement.domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagementsystem\\hrmanagement.application\\features\\auth\\queries\\login\\loginquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|c:\\users\\djalf\\onedrive\\documentos\\visual studio 2022\\hrmanagement\\hrmanagement.application\\features\\auth\\queries\\login\\loginquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2EADED23-D24E-4C48-A8C1-147774768F97}|HRManagement.Application\\HRManagement.Application.csproj|solutionrelative:hrmanagement.application\\features\\auth\\queries\\login\\loginquery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -47,10 +71,88 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "EmployeesControllerTests.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Tests\\EmployeesControllerTests.cs",
+              "RelativeDocumentMoniker": "HRManagement.Tests\\EmployeesControllerTests.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Tests\\EmployeesControllerTests.cs",
+              "RelativeToolTip": "HRManagement.Tests\\EmployeesControllerTests.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAkwDgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T01:46:28.695Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesController.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Controllers\\EmployeesController.cs",
+              "RelativeDocumentMoniker": "HRManagement.WebApi\\Controllers\\EmployeesController.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Controllers\\EmployeesController.cs",
+              "RelativeToolTip": "HRManagement.WebApi\\Controllers\\EmployeesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T01:44:56.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\Employee.cs",
+              "RelativeDocumentMoniker": "HRManagement.Domain\\Employee.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\Employee.cs",
+              "RelativeToolTip": "HRManagement.Domain\\Employee.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T01:42:50.751Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeeGrpcService.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Services\\EmployeeGrpcService.cs",
+              "RelativeDocumentMoniker": "HRManagement.WebApi\\Services\\EmployeeGrpcService.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Services\\EmployeeGrpcService.cs",
+              "RelativeToolTip": "HRManagement.WebApi\\Services\\EmployeeGrpcService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAmwEMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T23:55:01.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CreateEmployeeCommand.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Features\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
+              "RelativeDocumentMoniker": "HRManagement.Application\\Features\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Features\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
+              "RelativeToolTip": "HRManagement.Application\\Features\\Employees\\Commands\\CreateEmployee\\CreateEmployeeCommand.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswDAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-14T23:54:59.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "employees.proto",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Protos\\employees.proto",
+              "RelativeDocumentMoniker": "HRManagement.WebApi\\Protos\\employees.proto",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Protos\\employees.proto",
+              "RelativeToolTip": "HRManagement.WebApi\\Protos\\employees.proto",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003853|",
+              "WhenOpened": "2025-12-14T23:42:38.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.WebApi\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Program.cs",
               "RelativeDocumentMoniker": "HRManagement.WebApi\\Program.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.WebApi\\Program.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Program.cs",
               "RelativeToolTip": "HRManagement.WebApi\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -59,49 +161,48 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "IHrManagementDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\Interfaces\\IHrManagementDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Interfaces\\IHrManagementDbContext.cs",
               "RelativeDocumentMoniker": "HRManagement.Application\\Interfaces\\IHrManagementDbContext.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\Interfaces\\IHrManagementDbContext.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Interfaces\\IHrManagementDbContext.cs",
               "RelativeToolTip": "HRManagement.Application\\Interfaces\\IHrManagementDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T04:38:57.096Z"
+              "WhenOpened": "2025-12-12T04:38:57.096Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.WebApi\\Controllers\\AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "HRManagement.WebApi\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.WebApi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\Controllers\\AuthController.cs",
               "RelativeToolTip": "HRManagement.WebApi\\Controllers\\AuthController.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAowD0AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T04:24:25.058Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T04:24:25.058Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "LoginQueryHandler.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQueryHandler.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQueryHandler.cs",
               "RelativeDocumentMoniker": "HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQueryHandler.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQueryHandler.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQueryHandler.cs",
               "RelativeToolTip": "HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQueryHandler.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T04:24:05.075Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T04:24:05.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "LoginQuery.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQuery.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQuery.cs",
               "RelativeDocumentMoniker": "HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQuery.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQuery.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQuery.cs",
               "RelativeToolTip": "HRManagement.Application\\Features\\Auth\\Queries\\Login\\LoginQuery.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -109,11 +210,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "HRManagement.Application.csproj",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\HRManagement.Application.csproj",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\HRManagement.Application.csproj",
               "RelativeDocumentMoniker": "HRManagement.Application\\HRManagement.Application.csproj",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\HRManagement.Application.csproj",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\HRManagement.Application.csproj",
               "RelativeToolTip": "HRManagement.Application\\HRManagement.Application.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -121,24 +222,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 10,
               "Title": "HrManagementDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Infrastructure\\Persistence\\HrManagementDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Infrastructure\\Persistence\\HrManagementDbContext.cs",
               "RelativeDocumentMoniker": "HRManagement.Infrastructure\\Persistence\\HrManagementDbContext.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Infrastructure\\Persistence\\HrManagementDbContext.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Infrastructure\\Persistence\\HrManagementDbContext.cs",
               "RelativeToolTip": "HRManagement.Infrastructure\\Persistence\\HrManagementDbContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T04:22:04.112Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-12T04:22:04.112Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\Entities\\User.cs",
+              "DocumentMoniker": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\Entities\\User.cs",
               "RelativeDocumentMoniker": "HRManagement.Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\Entities\\User.cs",
+              "ToolTip": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\Entities\\User.cs",
               "RelativeToolTip": "HRManagement.Domain\\Entities\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

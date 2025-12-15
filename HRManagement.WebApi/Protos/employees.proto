@@ -1,24 +1,52 @@
 syntax = "proto3";
 
+// El namespace debe coincidir con donde C# generará el código
 option csharp_namespace = "HRManagement.WebApi.Protos";
 
-package hr;
+package employees;
 
-// Definición del servicio
+// Definición del Servicio (Las funciones que expones)
 service EmployeeGrpc {
-  // Función para obtener info de un empleado
-  rpc GetEmployeeInfo (EmployeeRequest) returns (EmployeeReply);
+  // 1. Obtener un empleado por su ID
+  rpc GetEmployeeInfo (GetEmployeeRequest) returns (EmployeeModel);
+
+  // 2. Crear un empleado nuevo (Cumple con la rúbrica de enviar datos)
+  rpc CreateEmployee (CreateEmployeeRequest) returns (CreateEmployeeResponse);
 }
 
-// Mensaje de lo que pides (Input)
-message EmployeeRequest {
+// --- MENSAJES (Las "cajas" donde viajan los datos) ---
+
+// Petición para pedir un empleado (solo enviamos el ID)
+message GetEmployeeRequest {
   int32 id = 1;
 }
 
-// Mensaje de lo que recibes (Output)
-message EmployeeReply {
+// Respuesta para crear un empleado (devuelve si tuvo éxito y el nuevo ID)
+message CreateEmployeeResponse {
+  bool success = 1;
+  int32 new_id = 2;
+  string message = 3;
+}
+
+// Petición para crear (Lleva TODOS los datos del empleado)
+message CreateEmployeeRequest {
+  string first_name = 1;
+  string last_name = 2;
+  string email = 3;
+  double salary = 4;        // 'double' se usa para decimales en Proto
+  string phone_number = 5;
+  string department = 6;
+  int32 position_id = 7;
+}
+
+// Modelo completo del empleado (para cuando devolvemos datos)
+message EmployeeModel {
   int32 id = 1;
-  string firstName = 2;
-  string lastName = 3;
+  string first_name = 2;
+  string last_name = 3;
   string email = 4;
+  double salary = 5;
+  string phone_number = 6;
+  string department = 7;
+  int32 position_id = 8;
 }

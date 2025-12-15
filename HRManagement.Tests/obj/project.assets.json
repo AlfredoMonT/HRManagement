@@ -4533,11 +4533,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Tests\\HRManagement.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Tests\\HRManagement.Tests.csproj",
       "projectName": "HRManagement.Tests",
-      "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Tests\\HRManagement.Tests.csproj",
+      "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Tests\\HRManagement.Tests.csproj",
       "packagesPath": "C:\\Users\\djalf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Tests\\obj\\",
+      "outputPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\djalf\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4554,14 +4554,14 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\HRManagement.Application.csproj": {
-              "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Application\\HRManagement.Application.csproj"
+            "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\HRManagement.Application.csproj": {
+              "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Application\\HRManagement.Application.csproj"
             },
-            "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\HRManagement.Domain.csproj": {
-              "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\HRManagement.Domain.csproj"
+            "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\HRManagement.Domain.csproj": {
+              "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\HRManagement.Domain.csproj"
             },
-            "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.WebApi\\HRManagement.WebApi.csproj": {
-              "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.WebApi\\HRManagement.WebApi.csproj"
+            "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\HRManagement.WebApi.csproj": {
+              "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.WebApi\\HRManagement.WebApi.csproj"
             }
           }
         }

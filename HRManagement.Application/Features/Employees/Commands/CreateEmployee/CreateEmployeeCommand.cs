@@ -1,47 +1,49 @@
-﻿using HRManagement.Domain;
-using HRManagement.Domain.Entities;
+﻿using HRManagement.Domain.Entities;
 using MediatR;
-using System.Threading;
-using System.Threading.Tasks;
+using HRManagement.Application.Interfaces; // Necesario para guardar
 
 namespace HRManagement.Application.Features.Employees.Commands.CreateEmployee
 {
-    // 1. EL COMANDO (Los datos que vienen del cliente)
+    // TUS CORRECCIONES DE TIPOS (ESTO ESTÁ PERFECTO) ✅
     public class CreateEmployeeCommand : IRequest<int>
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Email { get; set; }
+        public required string FirstName { get; set; }
+        public required string LastName { get; set; }
+        public required string Email { get; set; }
         public decimal Salary { get; set; }
+
+        public string? PhoneNumber { get; set; }
+        public string? Department { get; set; } // Correcto: string
+        public int? PositionId { get; set; }    // Correcto: nullable int
     }
 
-    // 2. EL MANEJADOR (La lógica que guarda en BD)
+    // EL HANDLER REAL (AQUÍ QUITAMOS EL 10 FALSO) ⚠️
     public class CreateEmployeeCommandHandler : IRequestHandler<CreateEmployeeCommand, int>
     {
+        private readonly IHrManagementDbContext _context;
 
-
-        public CreateEmployeeCommandHandler(/* IEmployeeRepository repository */)
+        public CreateEmployeeCommandHandler(IHrManagementDbContext context)
         {
-            // _repository = repository;
+            _context = context;
         }
 
-        public Task<int> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateEmployeeCommand request, CancellationToken cancellationToken)
         {
-            // LÓGICA SIMULADA (Para cumplir la guía rápido):
-            // 1. Convertimos el comando a una entidad de dominio
             var employee = new Employee
             {
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Email = request.Email,
-                Salary = request.Salary
+                Salary = request.Salary,
+                PhoneNumber = request.PhoneNumber,
+                Department = request.Department, // Ahora sí coinciden los tipos
+                PositionId = request.PositionId
             };
 
-            // 2. Aquí guardarías en base de datos:
-            // _repository.Add(employee);
+            _context.Employees.Add(employee);
+            await _context.SaveChangesAsync(cancellationToken);
 
-            // 3. Retornamos un ID falso (ej. 10) para confirmar que funcionó
-            return Task.FromResult(10);
+            return employee.Id; // Devuelve el ID real de la BD
         }
     }
 }

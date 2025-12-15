@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\HRManagement.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\HRManagement.Domain.csproj",
       "projectName": "HRManagement.Domain",
-      "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\HRManagement.Domain.csproj",
+      "projectPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\HRManagement.Domain.csproj",
       "packagesPath": "C:\\Users\\djalf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagementSystem\\HRManagement.Domain\\obj\\",
+      "outputPath": "C:\\Users\\djalf\\OneDrive\\Documentos\\Visual Studio 2022\\HRManagement\\HRManagement.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\djalf\\AppData\\Roaming\\NuGet\\NuGet.Config",
