@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HRManagement.Application.Features.Employees.Commands.CreateEmployee;
-using HRManagement.Application.Interfaces; // Para usar el DbContext directamente en el GET simple
+using HRManagement.Application.Interfaces; // Para usar el DbContext directamente
 using MediatR;
 using Microsoft.EntityFrameworkCore; // Necesario para ToListAsync
 
@@ -11,7 +11,7 @@ namespace HRManagement.WebApi.Controllers
     public class EmployeesController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IHrManagementDbContext _context; // Inyectamos el contexto para consultas rápidas
+        private readonly IHrManagementDbContext _context;
 
         public EmployeesController(IMediator mediator, IHrManagementDbContext context)
         {
@@ -19,12 +19,10 @@ namespace HRManagement.WebApi.Controllers
             _context = context;
         }
 
-        // GET: api/Employees
+        // 1. GET: api/Employees (Lectura)
         [HttpGet]
         public async Task<ActionResult<IEnumerable<object>>> GetEmployees()
         {
-            // ERROR CS1061 ARREGLADO:
-            // En lugar de incluir "Position", simplemente traemos los datos planos del empleado.
             var employees = await _context.Employees
                 .Select(e => new
                 {
@@ -35,20 +33,69 @@ namespace HRManagement.WebApi.Controllers
                     e.Salary,
                     e.PhoneNumber,
                     e.Department,
-                    e.PositionId // Usamos solo el ID, no el objeto completo .Position
+                    e.PositionId
                 })
                 .ToListAsync();
 
             return Ok(employees);
         }
 
-        // POST: api/Employees
+        // 2. POST: api/Employees (Creación)
         [HttpPost]
         public async Task<ActionResult<int>> CreateEmployee(CreateEmployeeCommand command)
         {
             var employeeId = await _mediator.Send(command);
-            // Devolvemos un objeto JSON bonito en lugar de solo el número
             return Ok(new { id = employeeId, message = "Empleado creado con éxito via CQRS" });
+        }
+
+        // 3. PUT: api/Employees/5 (Actualización)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateEmployee(int id, [FromBody] CreateEmployeeCommand command)
+        {
+            // NOTA: Reusamos 'CreateEmployeeCommand' como DTO para actualizar para no crear archivos nuevos.
+
+            // a) Buscamos el empleado existente
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+            {
+                return NotFound(new { message = $"No se encontró el empleado con ID {id}" });
+            }
+
+            // b) Actualizamos los campos
+            employee.FirstName = command.FirstName;
+            employee.LastName = command.LastName;
+            employee.Email = command.Email;
+            employee.Salary = command.Salary;
+            employee.PhoneNumber = command.PhoneNumber;
+            employee.Department = command.Department;
+            employee.PositionId = command.PositionId;
+
+            // c) Guardamos cambios en base de datos
+            await _context.SaveChangesAsync(default);
+
+            return Ok(new { message = "Empleado actualizado correctamente" });
+        }
+
+        // 4. DELETE: api/Employees/5 (Eliminación)
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteEmployee(int id)
+        {
+            // a) Buscamos el empleado
+            var employee = await _context.Employees.FindAsync(id);
+
+            if (employee == null)
+            {
+                return NotFound(new { message = $"No se encontró el empleado con ID {id}" });
+            }
+
+            // b) Eliminamos
+            _context.Employees.Remove(employee);
+
+            // c) Guardamos cambios
+            await _context.SaveChangesAsync(default);
+
+            return Ok(new { message = "Empleado eliminado correctamente" });
         }
     }
 }
