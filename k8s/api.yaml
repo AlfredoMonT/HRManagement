@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hrmanagement-api
+  template:
+    metadata:
+      labels:
+        app: hrmanagement-api
+    spec:
+      containers:
+      - name: api
+        image: hrmanagement-api:latest
+        imagePullPolicy: Never # Usa la imagen local de Minikube
+        ports:
+        - containerPort: 8080
+        env:
+        # Usamos el ConfigMap
+        - name: ASPNETCORE_ENVIRONMENT
+          valueFrom:
+            configMapKeyRef:
+              name: hrmanagement-config
+              key: aspnet-env
+        # Usamos el Secret
+        - name: ConnectionStrings__DefaultConnection
+          valueFrom:
+            secretKeyRef:
+              name: hrmanagement-secrets
+              key: db-connection
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: api-service
+spec:
+  selector:
+    app: hrmanagement-api
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+  type: NodePort

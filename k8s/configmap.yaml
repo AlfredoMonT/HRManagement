@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hrmanagement-config
+data:
+  aspnet-env: "Development" # O "Production"
+
