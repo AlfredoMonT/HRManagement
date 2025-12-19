@@ -6,6 +6,3 @@
 **/*.user
 **/*.vs
 
-# Excluye los archivos de Git
-.git
-.gitignore

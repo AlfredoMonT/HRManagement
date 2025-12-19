@@ -1,0 +1,38 @@
+name: CI/CD Pipeline - HRManagement
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Descargar el código
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    # 2. Instalar .NET 8
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 8.0.x
+
+    # 3. Restaurar dependencias (Usando el archivo de solución que veo en tu imagen)
+    - name: Restore dependencies
+      run: dotnet restore ./HRManagementSystem.sln
+
+    # 4. Compilar (Build) toda la solución
+    - name: Build
+      run: dotnet build ./HRManagementSystem.sln --no-restore
+
+    # 5. Ejecutar Pruebas (Apuntando a tu carpeta de Tests)
+    - name: Test
+      run: dotnet test ./HRManagement.Tests --no-build --verbosity normal
+
+    # 6. Construir Imagen Docker
+    - name: Build Docker Image
+      run: docker build -f ./Dockerfile -t hrmanagement-service:latest .

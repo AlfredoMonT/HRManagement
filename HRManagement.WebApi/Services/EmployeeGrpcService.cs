@@ -1,68 +1,78 @@
 ﻿using Grpc.Core;
 using MediatR;
-using HRManagement.WebApi.Protos; // Aquí viven las clases generadas por el Proto
+using HRManagement.WebApi.Protos;
 using HRManagement.Application.Features.Employees.Commands.CreateEmployee;
-// Si tienes una Query para GetEmployee, agrégala aquí también, por ahora usaremos datos dummy o simulados
+using HRManagement.Application.Interfaces; 
+using Microsoft.EntityFrameworkCore;       
 
 namespace HRManagement.WebApi.Services
 {
-    // Heredamos de la base generada por el nuevo Proto
     public class EmployeeGrpcService : EmployeeGrpc.EmployeeGrpcBase
     {
         private readonly IMediator _mediator;
+        private readonly IHrManagementDbContext _context; 
 
-        public EmployeeGrpcService(IMediator mediator)
+        // Actualizamos el constructor
+        public EmployeeGrpcService(IMediator mediator, IHrManagementDbContext context)
         {
             _mediator = mediator;
+            _context = context;
         }
 
-        // 1. Implementación de CreateEmployee (Tal como lo definimos en el Proto)
+        // 1. CREATE 
         public override async Task<CreateEmployeeResponse> CreateEmployee(CreateEmployeeRequest request, ServerCallContext context)
         {
-            // Convertimos el mensaje de Proto (request) al Comando de MediatR
-            var command = new CreateEmployeeCommand
+            try
             {
-                FirstName = request.FirstName,
-                LastName = request.LastName,
-                Email = request.Email,
-                Salary = (decimal)request.Salary, // Convertimos double a decimal
-                PhoneNumber = request.PhoneNumber,
-                Department = request.Department,
-                PositionId = request.PositionId == 0 ? null : request.PositionId // Manejo de nulos
-            };
+                var command = new CreateEmployeeCommand
+                {
+                    FirstName = request.FirstName,
+                    LastName = request.LastName,
+                    Email = request.Email,
+                    Salary = (decimal)request.Salary,
+                    PhoneNumber = request.PhoneNumber,
+                    Department = request.Department,
+                    PositionId = request.PositionId == 0 ? null : request.PositionId
+                };
 
-            // Enviamos a la Capa Application
-            var newEmployeeId = await _mediator.Send(command);
+                var newEmployeeId = await _mediator.Send(command);
 
-            // Devolvemos la respuesta que pide el Proto
-            return new CreateEmployeeResponse
+                return new CreateEmployeeResponse
+                {
+                    Success = true,
+                    NewId = newEmployeeId,
+                    Message = "Empleado creado exitosamente desde gRPC"
+                };
+            }
+            catch (Exception ex)
             {
-                Success = true,
-                NewId = newEmployeeId,
-                Message = "Empleado creado exitosamente desde gRPC"
-            };
+                return new CreateEmployeeResponse { Success = false, Message = ex.Message };
+            }
         }
 
-        // 2. Implementación de GetEmployeeInfo
-        public override Task<EmployeeModel> GetEmployeeInfo(GetEmployeeRequest request, ServerCallContext context)
+        // 2. GET (Ahora con DATOS REALES)
+        public override async Task<EmployeeModel> GetEmployeeInfo(GetEmployeeRequest request, ServerCallContext context)
         {
-            // NOTA: Aquí deberías llamar a una Query de MediatR (GetEmployeeByIdQuery).
-            // Como no estoy seguro si ya creaste esa Query, pondré un dato simulado para que compile.
-            // Cuando tengas la Query, cambias esto.
+            // Buscamos en la BD real
+            var employee = await _context.Employees.FindAsync(request.Id);
 
-            var employeeModel = new EmployeeModel
+            if (employee == null)
             {
-                Id = request.Id,
-                FirstName = "Simulado",
-                LastName = "Desde gRPC",
-                Email = "test@grpc.com",
-                Salary = 2000.50,
-                Department = "IT",
-                PhoneNumber = "123456",
-                PositionId = 1
-            };
+                // Lanzamos error estándar de gRPC si no existe
+                throw new RpcException(new Status(StatusCode.NotFound, $"Empleado ID {request.Id} no encontrado"));
+            }
 
-            return Task.FromResult(employeeModel);
+            return new EmployeeModel
+            {
+                Id = employee.Id,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
+                Email = employee.Email,
+                Salary = (double)employee.Salary,
+                Department = employee.Department ?? "",
+                PhoneNumber = employee.PhoneNumber ?? "",
+                PositionId = employee.PositionId ?? 0
+            };
         }
     }
 }

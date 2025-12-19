@@ -24,17 +24,29 @@ namespace HRManagement.WebApi.Protos {
     static EmployeesReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChZQcm90b3MvZW1wbG95ZWVzLnByb3RvEgJociIdCg9FbXBsb3llZVJlcXVl",
-            "c3QSCgoCaWQYASABKAUiTwoNRW1wbG95ZWVSZXBseRIKCgJpZBgBIAEoBRIR",
-            "CglmaXJzdE5hbWUYAiABKAkSEAoIbGFzdE5hbWUYAyABKAkSDQoFZW1haWwY",
-            "BCABKAkySQoMRW1wbG95ZWVHcnBjEjkKD0dldEVtcGxveWVlSW5mbxITLmhy",
-            "LkVtcGxveWVlUmVxdWVzdBoRLmhyLkVtcGxveWVlUmVwbHlCHaoCGkhSTWFu",
-            "YWdlbWVudC5XZWJBcGkuUHJvdG9zYgZwcm90bzM="));
+            "ChZQcm90b3MvZW1wbG95ZWVzLnByb3RvEgllbXBsb3llZXMiIAoSR2V0RW1w",
+            "bG95ZWVSZXF1ZXN0EgoKAmlkGAEgASgFIkoKFkNyZWF0ZUVtcGxveWVlUmVz",
+            "cG9uc2USDwoHc3VjY2VzcxgBIAEoCBIOCgZuZXdfaWQYAiABKAUSDwoHbWVz",
+            "c2FnZRgDIAEoCSKcAQoVQ3JlYXRlRW1wbG95ZWVSZXF1ZXN0EhIKCmZpcnN0",
+            "X25hbWUYASABKAkSEQoJbGFzdF9uYW1lGAIgASgJEg0KBWVtYWlsGAMgASgJ",
+            "Eg4KBnNhbGFyeRgEIAEoARIUCgxwaG9uZV9udW1iZXIYBSABKAkSEgoKZGVw",
+            "YXJ0bWVudBgGIAEoCRITCgtwb3NpdGlvbl9pZBgHIAEoBSKgAQoNRW1wbG95",
+            "ZWVNb2RlbBIKCgJpZBgBIAEoBRISCgpmaXJzdF9uYW1lGAIgASgJEhEKCWxh",
+            "c3RfbmFtZRgDIAEoCRINCgVlbWFpbBgEIAEoCRIOCgZzYWxhcnkYBSABKAES",
+            "FAoMcGhvbmVfbnVtYmVyGAYgASgJEhIKCmRlcGFydG1lbnQYByABKAkSEwoL",
+            "cG9zaXRpb25faWQYCCABKAUysQEKDEVtcGxveWVlR3JwYxJKCg9HZXRFbXBs",
+            "b3llZUluZm8SHS5lbXBsb3llZXMuR2V0RW1wbG95ZWVSZXF1ZXN0GhguZW1w",
+            "bG95ZWVzLkVtcGxveWVlTW9kZWwSVQoOQ3JlYXRlRW1wbG95ZWUSIC5lbXBs",
+            "b3llZXMuQ3JlYXRlRW1wbG95ZWVSZXF1ZXN0GiEuZW1wbG95ZWVzLkNyZWF0",
+            "ZUVtcGxveWVlUmVzcG9uc2VCHaoCGkhSTWFuYWdlbWVudC5XZWJBcGkuUHJv",
+            "dG9zYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::HRManagement.WebApi.Protos.EmployeeRequest), global::HRManagement.WebApi.Protos.EmployeeRequest.Parser, new[]{ "Id" }, null, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::HRManagement.WebApi.Protos.EmployeeReply), global::HRManagement.WebApi.Protos.EmployeeReply.Parser, new[]{ "Id", "FirstName", "LastName", "Email" }, null, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::HRManagement.WebApi.Protos.GetEmployeeRequest), global::HRManagement.WebApi.Protos.GetEmployeeRequest.Parser, new[]{ "Id" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::HRManagement.WebApi.Protos.CreateEmployeeResponse), global::HRManagement.WebApi.Protos.CreateEmployeeResponse.Parser, new[]{ "Success", "NewId", "Message" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::HRManagement.WebApi.Protos.CreateEmployeeRequest), global::HRManagement.WebApi.Protos.CreateEmployeeRequest.Parser, new[]{ "FirstName", "LastName", "Email", "Salary", "PhoneNumber", "Department", "PositionId" }, null, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::HRManagement.WebApi.Protos.EmployeeModel), global::HRManagement.WebApi.Protos.EmployeeModel.Parser, new[]{ "Id", "FirstName", "LastName", "Email", "Salary", "PhoneNumber", "Department", "PositionId" }, null, null, null, null)
           }));
     }
     #endregion
@@ -42,19 +54,19 @@ namespace HRManagement.WebApi.Protos {
   }
   #region Messages
   /// <summary>
-  /// Mensaje de lo que pides (Input)
+  /// Petición para pedir un empleado (solo enviamos el ID)
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class EmployeeRequest : pb::IMessage<EmployeeRequest>
+  public sealed partial class GetEmployeeRequest : pb::IMessage<GetEmployeeRequest>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<EmployeeRequest> _parser = new pb::MessageParser<EmployeeRequest>(() => new EmployeeRequest());
+    private static readonly pb::MessageParser<GetEmployeeRequest> _parser = new pb::MessageParser<GetEmployeeRequest>(() => new GetEmployeeRequest());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<EmployeeRequest> Parser { get { return _parser; } }
+    public static pb::MessageParser<GetEmployeeRequest> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -70,7 +82,7 @@ namespace HRManagement.WebApi.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmployeeRequest() {
+    public GetEmployeeRequest() {
       OnConstruction();
     }
 
@@ -78,15 +90,15 @@ namespace HRManagement.WebApi.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmployeeRequest(EmployeeRequest other) : this() {
+    public GetEmployeeRequest(GetEmployeeRequest other) : this() {
       id_ = other.id_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmployeeRequest Clone() {
-      return new EmployeeRequest(this);
+    public GetEmployeeRequest Clone() {
+      return new GetEmployeeRequest(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -104,12 +116,12 @@ namespace HRManagement.WebApi.Protos {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override bool Equals(object other) {
-      return Equals(other as EmployeeRequest);
+      return Equals(other as GetEmployeeRequest);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(EmployeeRequest other) {
+    public bool Equals(GetEmployeeRequest other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -182,7 +194,7 @@ namespace HRManagement.WebApi.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(EmployeeRequest other) {
+    public void MergeFrom(GetEmployeeRequest other) {
       if (other == null) {
         return;
       }
@@ -243,19 +255,19 @@ namespace HRManagement.WebApi.Protos {
   }
 
   /// <summary>
-  /// Mensaje de lo que recibes (Output)
+  /// Respuesta para crear un empleado (devuelve si tuvo éxito y el nuevo ID)
   /// </summary>
   [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
-  public sealed partial class EmployeeReply : pb::IMessage<EmployeeReply>
+  public sealed partial class CreateEmployeeResponse : pb::IMessage<CreateEmployeeResponse>
   #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       , pb::IBufferMessage
   #endif
   {
-    private static readonly pb::MessageParser<EmployeeReply> _parser = new pb::MessageParser<EmployeeReply>(() => new EmployeeReply());
+    private static readonly pb::MessageParser<CreateEmployeeResponse> _parser = new pb::MessageParser<CreateEmployeeResponse>(() => new CreateEmployeeResponse());
     private pb::UnknownFieldSet _unknownFields;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public static pb::MessageParser<EmployeeReply> Parser { get { return _parser; } }
+    public static pb::MessageParser<CreateEmployeeResponse> Parser { get { return _parser; } }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
@@ -271,7 +283,7 @@ namespace HRManagement.WebApi.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmployeeReply() {
+    public CreateEmployeeResponse() {
       OnConstruction();
     }
 
@@ -279,18 +291,723 @@ namespace HRManagement.WebApi.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmployeeReply(EmployeeReply other) : this() {
-      id_ = other.id_;
-      firstName_ = other.firstName_;
-      lastName_ = other.lastName_;
-      email_ = other.email_;
+    public CreateEmployeeResponse(CreateEmployeeResponse other) : this() {
+      success_ = other.success_;
+      newId_ = other.newId_;
+      message_ = other.message_;
       _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public EmployeeReply Clone() {
-      return new EmployeeReply(this);
+    public CreateEmployeeResponse Clone() {
+      return new CreateEmployeeResponse(this);
+    }
+
+    /// <summary>Field number for the "success" field.</summary>
+    public const int SuccessFieldNumber = 1;
+    private bool success_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Success {
+      get { return success_; }
+      set {
+        success_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "new_id" field.</summary>
+    public const int NewIdFieldNumber = 2;
+    private int newId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int NewId {
+      get { return newId_; }
+      set {
+        newId_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "message" field.</summary>
+    public const int MessageFieldNumber = 3;
+    private string message_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Message {
+      get { return message_; }
+      set {
+        message_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CreateEmployeeResponse);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CreateEmployeeResponse other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Success != other.Success) return false;
+      if (NewId != other.NewId) return false;
+      if (Message != other.Message) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Success != false) hash ^= Success.GetHashCode();
+      if (NewId != 0) hash ^= NewId.GetHashCode();
+      if (Message.Length != 0) hash ^= Message.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (NewId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(NewId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (Success != false) {
+        output.WriteRawTag(8);
+        output.WriteBool(Success);
+      }
+      if (NewId != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(NewId);
+      }
+      if (Message.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Message);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (Success != false) {
+        size += 1 + 1;
+      }
+      if (NewId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(NewId);
+      }
+      if (Message.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Message);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CreateEmployeeResponse other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Success != false) {
+        Success = other.Success;
+      }
+      if (other.NewId != 0) {
+        NewId = other.NewId;
+      }
+      if (other.Message.Length != 0) {
+        Message = other.Message;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 16: {
+            NewId = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 8: {
+            Success = input.ReadBool();
+            break;
+          }
+          case 16: {
+            NewId = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            Message = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Petición para crear (Lleva TODOS los datos del empleado)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class CreateEmployeeRequest : pb::IMessage<CreateEmployeeRequest>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<CreateEmployeeRequest> _parser = new pb::MessageParser<CreateEmployeeRequest>(() => new CreateEmployeeRequest());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<CreateEmployeeRequest> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::HRManagement.WebApi.Protos.EmployeesReflection.Descriptor.MessageTypes[2]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreateEmployeeRequest() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreateEmployeeRequest(CreateEmployeeRequest other) : this() {
+      firstName_ = other.firstName_;
+      lastName_ = other.lastName_;
+      email_ = other.email_;
+      salary_ = other.salary_;
+      phoneNumber_ = other.phoneNumber_;
+      department_ = other.department_;
+      positionId_ = other.positionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public CreateEmployeeRequest Clone() {
+      return new CreateEmployeeRequest(this);
+    }
+
+    /// <summary>Field number for the "first_name" field.</summary>
+    public const int FirstNameFieldNumber = 1;
+    private string firstName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string FirstName {
+      get { return firstName_; }
+      set {
+        firstName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "last_name" field.</summary>
+    public const int LastNameFieldNumber = 2;
+    private string lastName_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string LastName {
+      get { return lastName_; }
+      set {
+        lastName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "email" field.</summary>
+    public const int EmailFieldNumber = 3;
+    private string email_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Email {
+      get { return email_; }
+      set {
+        email_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "salary" field.</summary>
+    public const int SalaryFieldNumber = 4;
+    private double salary_;
+    /// <summary>
+    /// 'double' se usa para decimales en Proto
+    /// </summary>
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public double Salary {
+      get { return salary_; }
+      set {
+        salary_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phone_number" field.</summary>
+    public const int PhoneNumberFieldNumber = 5;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "department" field.</summary>
+    public const int DepartmentFieldNumber = 6;
+    private string department_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Department {
+      get { return department_; }
+      set {
+        department_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "position_id" field.</summary>
+    public const int PositionIdFieldNumber = 7;
+    private int positionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PositionId {
+      get { return positionId_; }
+      set {
+        positionId_ = value;
+      }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override bool Equals(object other) {
+      return Equals(other as CreateEmployeeRequest);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(CreateEmployeeRequest other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (FirstName != other.FirstName) return false;
+      if (LastName != other.LastName) return false;
+      if (Email != other.Email) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Salary, other.Salary)) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
+      if (Department != other.Department) return false;
+      if (PositionId != other.PositionId) return false;
+      return Equals(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override int GetHashCode() {
+      int hash = 1;
+      if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
+      if (LastName.Length != 0) hash ^= LastName.GetHashCode();
+      if (Email.Length != 0) hash ^= Email.GetHashCode();
+      if (Salary != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Salary);
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
+      if (Department.Length != 0) hash ^= Department.GetHashCode();
+      if (PositionId != 0) hash ^= PositionId.GetHashCode();
+      if (_unknownFields != null) {
+        hash ^= _unknownFields.GetHashCode();
+      }
+      return hash;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void WriteTo(pb::CodedOutputStream output) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      output.WriteRawMessage(this);
+    #else
+      if (FirstName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FirstName);
+      }
+      if (LastName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LastName);
+      }
+      if (Email.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Email);
+      }
+      if (Salary != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(Salary);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(PhoneNumber);
+      }
+      if (Department.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Department);
+      }
+      if (PositionId != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(PositionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(output);
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
+      if (FirstName.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(FirstName);
+      }
+      if (LastName.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(LastName);
+      }
+      if (Email.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Email);
+      }
+      if (Salary != 0D) {
+        output.WriteRawTag(33);
+        output.WriteDouble(Salary);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(PhoneNumber);
+      }
+      if (Department.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(Department);
+      }
+      if (PositionId != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(PositionId);
+      }
+      if (_unknownFields != null) {
+        _unknownFields.WriteTo(ref output);
+      }
+    }
+    #endif
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int CalculateSize() {
+      int size = 0;
+      if (FirstName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(FirstName);
+      }
+      if (LastName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(LastName);
+      }
+      if (Email.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
+      }
+      if (Salary != 0D) {
+        size += 1 + 8;
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
+      if (Department.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Department);
+      }
+      if (PositionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionId);
+      }
+      if (_unknownFields != null) {
+        size += _unknownFields.CalculateSize();
+      }
+      return size;
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(CreateEmployeeRequest other) {
+      if (other == null) {
+        return;
+      }
+      if (other.FirstName.Length != 0) {
+        FirstName = other.FirstName;
+      }
+      if (other.LastName.Length != 0) {
+        LastName = other.LastName;
+      }
+      if (other.Email.Length != 0) {
+        Email = other.Email;
+      }
+      if (other.Salary != 0D) {
+        Salary = other.Salary;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
+      }
+      if (other.Department.Length != 0) {
+        Department = other.Department;
+      }
+      if (other.PositionId != 0) {
+        PositionId = other.PositionId;
+      }
+      _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public void MergeFrom(pb::CodedInputStream input) {
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      input.ReadRawMessage(this);
+    #else
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, input);
+            break;
+          case 10: {
+            FirstName = input.ReadString();
+            break;
+          }
+          case 18: {
+            LastName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Email = input.ReadString();
+            break;
+          }
+          case 33: {
+            Salary = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 50: {
+            Department = input.ReadString();
+            break;
+          }
+          case 56: {
+            PositionId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    #endif
+    }
+
+    #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    void pb::IBufferMessage.InternalMergeFrom(ref pb::ParseContext input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+      if ((tag & 7) == 4) {
+        // Abort on any end group tag.
+        return;
+      }
+      switch(tag) {
+          default:
+            _unknownFields = pb::UnknownFieldSet.MergeFieldFrom(_unknownFields, ref input);
+            break;
+          case 10: {
+            FirstName = input.ReadString();
+            break;
+          }
+          case 18: {
+            LastName = input.ReadString();
+            break;
+          }
+          case 26: {
+            Email = input.ReadString();
+            break;
+          }
+          case 33: {
+            Salary = input.ReadDouble();
+            break;
+          }
+          case 42: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 50: {
+            Department = input.ReadString();
+            break;
+          }
+          case 56: {
+            PositionId = input.ReadInt32();
+            break;
+          }
+        }
+      }
+    }
+    #endif
+
+  }
+
+  /// <summary>
+  /// Modelo completo del empleado (para cuando devolvemos datos)
+  /// </summary>
+  [global::System.Diagnostics.DebuggerDisplayAttribute("{ToString(),nq}")]
+  public sealed partial class EmployeeModel : pb::IMessage<EmployeeModel>
+  #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
+      , pb::IBufferMessage
+  #endif
+  {
+    private static readonly pb::MessageParser<EmployeeModel> _parser = new pb::MessageParser<EmployeeModel>(() => new EmployeeModel());
+    private pb::UnknownFieldSet _unknownFields;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pb::MessageParser<EmployeeModel> Parser { get { return _parser; } }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::HRManagement.WebApi.Protos.EmployeesReflection.Descriptor.MessageTypes[3]; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EmployeeModel() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EmployeeModel(EmployeeModel other) : this() {
+      id_ = other.id_;
+      firstName_ = other.firstName_;
+      lastName_ = other.lastName_;
+      email_ = other.email_;
+      salary_ = other.salary_;
+      phoneNumber_ = other.phoneNumber_;
+      department_ = other.department_;
+      positionId_ = other.positionId_;
+      _unknownFields = pb::UnknownFieldSet.Clone(other._unknownFields);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public EmployeeModel Clone() {
+      return new EmployeeModel(this);
     }
 
     /// <summary>Field number for the "id" field.</summary>
@@ -305,7 +1022,7 @@ namespace HRManagement.WebApi.Protos {
       }
     }
 
-    /// <summary>Field number for the "firstName" field.</summary>
+    /// <summary>Field number for the "first_name" field.</summary>
     public const int FirstNameFieldNumber = 2;
     private string firstName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -317,7 +1034,7 @@ namespace HRManagement.WebApi.Protos {
       }
     }
 
-    /// <summary>Field number for the "lastName" field.</summary>
+    /// <summary>Field number for the "last_name" field.</summary>
     public const int LastNameFieldNumber = 3;
     private string lastName_ = "";
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -341,15 +1058,63 @@ namespace HRManagement.WebApi.Protos {
       }
     }
 
+    /// <summary>Field number for the "salary" field.</summary>
+    public const int SalaryFieldNumber = 5;
+    private double salary_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public override bool Equals(object other) {
-      return Equals(other as EmployeeReply);
+    public double Salary {
+      get { return salary_; }
+      set {
+        salary_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "phone_number" field.</summary>
+    public const int PhoneNumberFieldNumber = 6;
+    private string phoneNumber_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string PhoneNumber {
+      get { return phoneNumber_; }
+      set {
+        phoneNumber_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "department" field.</summary>
+    public const int DepartmentFieldNumber = 7;
+    private string department_ = "";
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public string Department {
+      get { return department_; }
+      set {
+        department_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "position_id" field.</summary>
+    public const int PositionIdFieldNumber = 8;
+    private int positionId_;
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public int PositionId {
+      get { return positionId_; }
+      set {
+        positionId_ = value;
+      }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public bool Equals(EmployeeReply other) {
+    public override bool Equals(object other) {
+      return Equals(other as EmployeeModel);
+    }
+
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
+    [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
+    public bool Equals(EmployeeModel other) {
       if (ReferenceEquals(other, null)) {
         return false;
       }
@@ -360,6 +1125,10 @@ namespace HRManagement.WebApi.Protos {
       if (FirstName != other.FirstName) return false;
       if (LastName != other.LastName) return false;
       if (Email != other.Email) return false;
+      if (!pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.Equals(Salary, other.Salary)) return false;
+      if (PhoneNumber != other.PhoneNumber) return false;
+      if (Department != other.Department) return false;
+      if (PositionId != other.PositionId) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -371,6 +1140,10 @@ namespace HRManagement.WebApi.Protos {
       if (FirstName.Length != 0) hash ^= FirstName.GetHashCode();
       if (LastName.Length != 0) hash ^= LastName.GetHashCode();
       if (Email.Length != 0) hash ^= Email.GetHashCode();
+      if (Salary != 0D) hash ^= pbc::ProtobufEqualityComparers.BitwiseDoubleEqualityComparer.GetHashCode(Salary);
+      if (PhoneNumber.Length != 0) hash ^= PhoneNumber.GetHashCode();
+      if (Department.Length != 0) hash ^= Department.GetHashCode();
+      if (PositionId != 0) hash ^= PositionId.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -405,6 +1178,22 @@ namespace HRManagement.WebApi.Protos {
         output.WriteRawTag(34);
         output.WriteString(Email);
       }
+      if (Salary != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(Salary);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PhoneNumber);
+      }
+      if (Department.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Department);
+      }
+      if (PositionId != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(PositionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
       }
@@ -431,6 +1220,22 @@ namespace HRManagement.WebApi.Protos {
         output.WriteRawTag(34);
         output.WriteString(Email);
       }
+      if (Salary != 0D) {
+        output.WriteRawTag(41);
+        output.WriteDouble(Salary);
+      }
+      if (PhoneNumber.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(PhoneNumber);
+      }
+      if (Department.Length != 0) {
+        output.WriteRawTag(58);
+        output.WriteString(Department);
+      }
+      if (PositionId != 0) {
+        output.WriteRawTag(64);
+        output.WriteInt32(PositionId);
+      }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
       }
@@ -453,6 +1258,18 @@ namespace HRManagement.WebApi.Protos {
       if (Email.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Email);
       }
+      if (Salary != 0D) {
+        size += 1 + 8;
+      }
+      if (PhoneNumber.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(PhoneNumber);
+      }
+      if (Department.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Department);
+      }
+      if (PositionId != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(PositionId);
+      }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
       }
@@ -461,7 +1278,7 @@ namespace HRManagement.WebApi.Protos {
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void MergeFrom(EmployeeReply other) {
+    public void MergeFrom(EmployeeModel other) {
       if (other == null) {
         return;
       }
@@ -476,6 +1293,18 @@ namespace HRManagement.WebApi.Protos {
       }
       if (other.Email.Length != 0) {
         Email = other.Email;
+      }
+      if (other.Salary != 0D) {
+        Salary = other.Salary;
+      }
+      if (other.PhoneNumber.Length != 0) {
+        PhoneNumber = other.PhoneNumber;
+      }
+      if (other.Department.Length != 0) {
+        Department = other.Department;
+      }
+      if (other.PositionId != 0) {
+        PositionId = other.PositionId;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
     }
@@ -512,6 +1341,22 @@ namespace HRManagement.WebApi.Protos {
             Email = input.ReadString();
             break;
           }
+          case 41: {
+            Salary = input.ReadDouble();
+            break;
+          }
+          case 50: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 58: {
+            Department = input.ReadString();
+            break;
+          }
+          case 64: {
+            PositionId = input.ReadInt32();
+            break;
+          }
         }
       }
     #endif
@@ -545,6 +1390,22 @@ namespace HRManagement.WebApi.Protos {
           }
           case 34: {
             Email = input.ReadString();
+            break;
+          }
+          case 41: {
+            Salary = input.ReadDouble();
+            break;
+          }
+          case 50: {
+            PhoneNumber = input.ReadString();
+            break;
+          }
+          case 58: {
+            Department = input.ReadString();
+            break;
+          }
+          case 64: {
+            PositionId = input.ReadInt32();
             break;
           }
         }
