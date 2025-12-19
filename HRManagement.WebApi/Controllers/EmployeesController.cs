@@ -1,13 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization; 
 using HRManagement.Application.Features.Employees.Commands.CreateEmployee;
-using HRManagement.Application.Interfaces; // Para usar el DbContext directamente
+using HRManagement.Application.Interfaces;
 using MediatR;
-using Microsoft.EntityFrameworkCore; // Necesario para ToListAsync
+using Microsoft.EntityFrameworkCore;
 
 namespace HRManagement.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class EmployeesController : ControllerBase
     {
         private readonly IMediator _mediator;
@@ -52,7 +54,6 @@ namespace HRManagement.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateEmployee(int id, [FromBody] CreateEmployeeCommand command)
         {
-            // NOTA: Reusamos 'CreateEmployeeCommand' como DTO para actualizar para no crear archivos nuevos.
 
             // a) Buscamos el empleado existente
             var employee = await _context.Employees.FindAsync(id);
